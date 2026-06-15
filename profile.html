@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my profile</title>
+     <link rel="preconnect" href="https://fonts.googleapis.com">`
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            font-family: 'popping',sans-serif;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+        body{
+            background: #fff;
+        }
+        .navigation{
+              background:linear-gradient(190deg,#000000,#050506,#11144b,#060613,#0f1026);
+        } 
+       .nav-section{
+        display: flex;
+        padding: 20px;
+        justify-content: space-between;
+        align-items: center;
+       }
+       .name{
+        font-size: 30px;
+        font-weight: bold;
+       color: #fff;
+       margin-left: 50px;
+       }
+       .name i{
+         background:linear-gradient(15deg,cyan,rgb(29, 179, 179),#010cdc);
+        -webkit-background-clip: text;
+        color: transparent;
+        font-size: 35px;
+       }
+       nav a{
+        text-decoration: none;
+        margin-left: 50px;
+        color: #fff;
+        transition: 0.5s;
+        position: relative;
+    cursor: pointer;
+       }
+       nav a:hover{
+        color: cyan;
+       }
+       .nav-button{
+        background:linear-gradient(15deg,cyan,rgb(29, 179, 179),#010cdc);
+        padding: 20px 35px;
+        border-radius: 10px;
+        font-size: 20px;
+        font-weight: bold;
+        color: #fff; 
+       }
+       .home-section{
+        display: flex;
+       }
+       .home-text{
+        padding:80px;
+        margin-top: -60px;
+       }
+       .home-section h2{
+        font-size: 28px;
+        font-weight: bold;
+        color: #fff;
+       }
+       .home-section h1{
+        font-size: 65px;
+         background:linear-gradient(45deg,cyan,#0612fa 20%,purple 50%);
+        -webkit-background-clip: text;
+        color: transparent;
+       }
+       .home-section h3{
+        font-size: 23px;
+        margin-top: 10px;
+        background:linear-gradient(45deg,cyan,#0612fa 20%,rgb(228, 5, 228) 50%);
+        -webkit-background-clip:text;
+        color: transparent;
+       }
+       .home-section p{
+        margin-top: 20px;
+        width: 550px;
+        font-size: 18px;
+        color: #fff;
+       }
+       .text-icons{
+        display: flex;
+         gap: 50px;
+         font-size: 25px;
+         margin-top: 50px;        
+       }
+       .text-icons span{
+        border: 1px solid #2f2f2f;
+        padding: 10px;
+        border-radius: 10px;
+        backdrop-filter: blur(80px);
+        cursor: pointer;
+        transition: 0.3s;
+       }
+       .text-icons span:hover{
+        transform: translateY(-5px);
+       }
+       .text-icons .f{
+        color: cyan;
+       }
+       .text-icons .g{
+        color: #0670fa;
+       }
+       .text-icons .h{
+         background:linear-gradient(45deg,cyan,#0d0e23 20%,yellow,rgb(228, 5, 228) 50%);
+        -webkit-background-clip:text;
+        color: transparent;
+       }
+       .text-icons .j{
+        color: #111562;
+       }
+       .home-image{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-left: 310px;
+        margin-top: -50px;
+       }
+       .home-image img{
+        border-radius: 100%;
+        width: 300px;
+        height: 300px;
+        object-fit: cover;
+        padding: 5px;
+        background:linear-gradient(45deg,cyan 10%,#0612fa 20%,purple 90%);
+        box-shadow: 0 4px 20px rgb(3, 137, 137);
+       }
+       .image-text{
+        backdrop-filter: blur(80px);
+        border-radius: 10px;
+        border: 2px solid rgb(14, 14, 177);
+        margin-top: 10px;
+        padding: 10px;
+       }
+       .image-text .icon i{
+        background:linear-gradient(45deg,cyan,#0612fa 50%,rgb(128, 15, 128));
+        -webkit-background-clip:text;
+        color: transparent;
+       font-size: 20px;
+       }
+       .image-text .icon {
+        color: #fff;
+        margin-left: 20px;
+       }
+       .me{
+        height: 450px;
+        background: #e0e2e9;
+        display: flex;
+        padding: 60px;
+       }
+       .about-icon{
+       display: flex;
+       margin-bottom: 20px;
+       }
+       .about-icon span{
+       font-size: 37px;
+       color: #010cdc;
+       }
+       .about-icon h2{
+        font-size: 30px;
+        margin-left: 10px;
+       }
+       .info{
+         width: 560px;
+         margin-bottom: 20px;
+       }
+       .personal .per{
+        display: flex;
+        margin-bottom: 10px;
+        gap: 10px;
+       }
+       .per span{
+        color: #0670fa;
+        font-size: 28px;
+       margin-top: -5px;
+       }
+       .per p{
+        display: flex;
+        gap: 20px;
+       }
+       .chart{
+        background: #0b0b18;
+        color: #fff;
+        width: 40%;
+        border-radius: 20px;
+        margin-left: 200px;
+        padding: 10px 20px;
+       }
+       .chart-icon{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+       }
+       .chart-icon span{
+        font-size: 30px;
+        color:#0670fa;
+       }
+       .chart-icon h2{
+        font-size: 28px;
+       }
+       .card{
+        display: flex;
+        margin-top: 25px;
+        gap: 20px;
+       }
+       .card span{
+        font-size: 20px;
+        margin-top: 10px;
+       }
+       .card-color .progress{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: absolute;
+       }
+       .card-color .progress{
+          height: 10px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 10px;
+      margin-top: 10px;
+      width: 450px;     
+       }
+       .card-color .progress span{
+      display: flex;
+      align-items: center;
+      margin-top: -1px;
+      height: 100%;
+      background: linear-gradient(45deg, #7c4dff, #00d4ff);
+      border-radius: 10px;
+       }
+        .card-color .progress.a span{
+      display: flex;
+      height: 100%;
+      background: linear-gradient(45deg,#4b5d05,yellow);
+      border-radius: 10px;
+        }
+         .card-color .progress.c span{
+      display: flex;
+      height: 100%;
+      background: linear-gradient(45deg, #0f5d05,rgb(0, 255, 21));
+      border-radius: 10px;
+        }
+         .card-color .progress.d span{
+      display: flex;
+      height: 100%;
+      background: linear-gradient(45deg, purple,rgb(255, 0, 255));
+      border-radius: 10px;
+        }
+       
+         .project-card{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 20px;
+              background: #e0e2e9;
+         }
+         .pro-card{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+         }
+         .pro-logo{
+            display: flex;
+            gap: 10px;
+            align-items: center;
+         }
+         .pro-logo span{
+            font-size: 32px;
+            color: #0612fa;
+         }
+         .pro-logo h2{
+            font-size: 30px;
+         }
+         .pro-view{
+            display: flex;
+            color: #0670fa;
+            gap: 10px;
+            align-items: center;
+         }
+         .pro-view h3{
+            font-size: 17px;
+         }
+         .pro-view h4{
+          font-size: 26px;
+         }
+         .pro-img img{
+            width: 400px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+         }
+         .pro-info{
+            display: flex;
+            justify-content: space-between;
+            height: 300px;
+         }
+         .pro-grid{
+            border-radius: 10px;
+            background: #fff;
+         }
+         .pro-grid h3{
+          margin: 10px;  
+         }
+         .pro-grid p{
+            width: 300px;
+            margin: 10px;
+         }
+         .pro-button{
+            margin: 10px;
+         }
+         .pro-button input{
+            width: 50px;
+            text-align: center;
+            border-radius: 10px;
+            background: #b8bfd1;
+            font-size: 15px;
+            font-weight: bold;
+            border: none;
+         }
+         .pro-button ::placeholder{
+         color: #010cdc;
+         font-size: 13px;
+         }
+         footer{
+            display: flex;
+            justify-content: space-between;
+            padding: 50px;
+            background: #020425;
+            color: #fff;
+         }
+         .left{
+            width: 300px;
+         }
+         .left h2{
+            margin-bottom: 20px;
+         }
+         .left p{
+            color: #726c6c;
+         }
+         .left .text-icons.a{
+            font-size: 20px;
+            margin-top: 20px;
+         }
+         .middle{
+            display: flex;
+            flex-direction: column;
+         }
+         .middle-text a{
+            display: flex;
+            text-decoration: none;
+            color: #656060;
+            margin-top: 10px;
+         }
+         .right p{
+          margin-top: 10px;
+           color: #656060;
+         }
+         .skill{
+            padding: 100px 10px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            background: radial-gradient(circle at top left,rgba(139,92,246,.5),transparent 40%),radial-gradient(circle at bottom right,rgba(20, 184, 166, 0.5),transparent 40%), #050816;
+            position: relative;
+         }
+         .skill-spell,.skill-card{
+            position: relative;
+            z-index: 2;
+         }
+         .skilles{
+            position: relative;
+            overflow-x: auto;
+             margin: 100px auto;
+            display: flex;
+            width: 5000px;
+            gap: 20px;
+            height: 350px;
+            scroll-behavior: smooth;
+         }
+         .skilles::-webkit-scrollbar{
+            display: none;
+         }
+         .skill::before{
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgb(5, 15, 55) 2px,transparent 1px);
+            background-size: 30px 30px;
+            opacity: .8;
+         }
+         .skill-spell{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+         }
+       .skill-spell h2{
+        background: linear-gradient(45deg,rgb(255, 0, 255),cyan);
+        -webkit-background-clip: text;
+        color: transparent;
+        margin-bottom: 10px;
+       }
+       .split{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+       }
+       .split h1{
+        font-size: 70px;
+        color: #fff;
+       }
+       .split .h1{
+        background: linear-gradient(45deg,cyan,rgb(255, 0, 255));
+        -webkit-background-clip:text;
+        color: transparent; 
+       }
+       .my-line{
+        position: relative;
+        height: 3px;
+        width: 90px;
+        border-radius: 20px;
+        top: 0;
+        left: 0;
+        background:#2c2c2c;
+        margin-top: 10px;
+        margin-bottom: 20px;
+       }
+       .my-line .line{
+        content: '';
+        position: absolute;
+         height: 3px;
+        width: 90px;
+        border-radius: 20px;  
+        background:linear-gradient(45deg,cyan,rgb(255, 0, 255));
+       }
+       .skill-spell p{
+        color: #fff;
+       }
+       .skill-card{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        animation: spin 8s infinite linear;
+       }
+       .og-card{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 300px;
+        height: 300px;
+        border: 3px solid #2c2c2c;
+        border-radius: 20px;
+        backdrop-filter: blur(50px);
+        transition: 0.5s;
+        cursor: pointer;
+       }
+       .og-card span{
+        font-size: 100px;
+        display: flex;
+        backdrop-filter:blur(100px) ;
+        width: 120px;
+        height: 120px;
+        border: 2px solid #ffffff;
+        border-radius: 50%;
+        justify-content: center;
+        align-items: center;
+        transition: 0.5s;
+       }
+       @keyframes spin {
+        from{translate: 0;}
+        to{
+            translate: -100%;
+        }
+       }
+       .og{
+        position: relative;
+        margin-bottom: 10px;
+        max-width: 200px;
+        height: 5px;
+        border-radius: 20px;
+        background: #00d4ff;
+       }
+       .og-card h2{
+        color: #fff;
+        margin-top: 10px;
+        margin-bottom: 10px;
+       }
+       .og-card p{
+        color: #c2b7b7;
+        text-align: center;
+        width: 250px;
+        margin-bottom: 20px;
+       }
+       .og-card.a span{
+        color: orangered;
+    
+       }
+       .og-card.a .og{
+        background: orangered;
+       }
+       .og-card.b span{
+        color: rgb(0, 85, 255);
+    
+       }
+       .og-card.b .og{
+        background:  rgb(0, 85, 255);
+       }
+        .og-card.c span{
+        color: rgb(0, 255, 102);
+    
+       }
+       .og-card.c .og{
+        background:  rgb(0, 255, 102);
+       }
+         .og-card.d span{
+        color: rgb(195, 0, 255);
+    
+       }
+       .og-card.d .og{
+        background:  rgb(195, 0, 255);
+       }
+         .og-card.e span{
+        color: rgb(225, 255, 0);
+    
+       }
+       .og-card.e .og{
+        background:  rgb(251, 255, 0);
+       }
+         .og-card.f span{
+        color: rgb(255, 255, 255);
+        background: none;
+        border-color: #fff;
+        border: 3px solid #fff;
+    
+       }
+       .og-card.f .og{
+        background:  rgb(255, 255, 255);
+       }
+         .og-card.g span{
+        color: rgb(217, 255, 0);
+    
+       }
+       .og-card.g .og{
+        background:  rgb(217, 255, 0);
+       }
+       .og-card:hover{
+       transform: translateY(-10px);
+       box-shadow: 0 4px 22px #fff;
+       }
+       .og-card.a:hover{
+       transform: translateY(-10px);
+       box-shadow: 0 4px 22px orangered;
+       }
+        .og-card.b:hover{
+       transform: translateY(-10px);
+       box-shadow: 0 4px 22px rgb(0, 85, 255);
+       }
+        .og-card.c:hover{
+       transform: translateY(-10px);
+       box-shadow: 0 4px 22px  rgb(0, 255, 102);
+       }
+         .og-card.d:hover{
+       transform: translateY(-10px);
+       box-shadow: 0 4px 22px  rgb(195, 0, 255);
+       }
+         .og-card.e:hover{
+       transform: translateY(-10px);
+       box-shadow: 0 4px 22px   rgb(225, 255, 0);
+       }
+         .og-card.g:hover{
+       transform: translateY(-10px);
+       box-shadow: 0 4px 22px   rgb(225, 255, 0);
+       }
+    </style>
+
+</head>
+<body>
+    <div class="navigation">
+    <div class="nav-section">
+        <div class="name"><i class='bx bx-code-alt' ></i> Ajay Kumar</div>
+        <nav>
+            <a href="#home" class="nav-item" >Home</a>
+             <a href="#about" class="nav-item" >About</a>
+              <a href="#skills" class="nav-item" >Skills</a>
+               <a href="#project" class="nav-item" >Projects</a>
+                <a href="#contact" class="nav-item" >Contact</a>
+        </nav>
+        <div class="nav-button"><i class='bx bx-download' ></i> Download CV</div>
+    </div>
+    <section id="home" class="homes">
+        <div class="home-section">
+            <div class="home-text">
+                <h2> Hello,I'm</h2>
+                <h1>Ajay Kumar</h1>
+                <h3>Full Stack Developer (Learning)</h3>
+                <p>Iam a B.tech student (3rd year) who loves building websites and learning new technologies.I enjoy turning ideas into real projects.</p>
+                <div class="text-icons">
+                    <span class="f"><i class="fa-brands fa-linkedin-in"></i></span>
+                    <span class="g"><i class="fa-brands fa-github"></i></span>
+                    <span class="h"><i class="fa-brands fa-instagram"></i></span>
+                    <span class="j"><i class="fa-solid fa-envelope"></i></span>
+                </div>
+            </div>
+            <div class="home-image">
+                <div class="image">
+                    <img src="image/WhatsApp Image 2026-06-11 at 2.11.40 PM.jpeg" 
+                    >
+                </div>
+                <div class="image-text">
+                    <div class="icon">
+                    <span><i class='bx bxs-graduation'></i> B.tech 3rd year</span>
+                    </div>
+                    <div class="icon">
+                    <span><i class="fa-solid fa-envelope"></i> Computer Science Engineering</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </section>
+    </div>
+    <section id="about" class="me">
+        <div class="about-me">
+            <div class="about-icon">
+                <span><i class='bx bxs-user-circle'></i></span>
+                <h2>About Me</h2>
+            </div>
+            <div class="info">
+                <p>I am a B.Tech 3rd Year student passionate about Web Development. I love building reponsive and user-friendly websites.I am constantly learning new technologies and improving my skills every day.</p>
+            </div>
+            <div class="personal">
+                <div class="per">
+                    <span><i class='bx bxs-user-circle'></i></span>
+                    <p><strong>Name:</strong>Ajay Kumar</p>
+                </div>
+                <div class="per">
+                    <span><i class='bx bxs-graduation'></i></span>
+                    <p><strong>College:</strong>Anantha Lakshmi Institution</p>
+                </div>
+                <div class="per">
+                    <span><i class='bx bx-layer'></i></span>
+                    <p><strong>Branch:</strong>Computer Science Engineering</p>
+                </div>
+                <div class="per">
+                    <span><i class='bx bxs-map' ></i></span>
+                    <p><strong>Location:</strong>Anantapur,Andhra Pradesh</p>
+                </div>
+                <div class="per">
+                    <span><i class='bx bxs-envelope' ></i></span>
+                    <p><strong>Email:</strong>kajay021206@gmail.com</p>
+                </div>
+            </div>
+        </div>
+        <div class="chart">
+            <div class="chart-icon">
+                <span><i class='bx bxs-book'></i></span>
+                <h2>Currently Learning</h2>
+            </div>
+            <div class="card">
+                <span><i class='bx bxl-javascript'></i></span>
+                <div class="card-color">
+                    <h3>JavaScript (Basics)</h3>
+                    <div class="progress a"> <span  style="width: 40%;"></span>40%</div>
+                </div>
+            </div>
+            <div class="card">
+                <span><i class='bx bxl-sketch' ></i></span>
+                <div class="card-color">
+                    <h3>Responsive Web Design</h3>
+                    <div class="progress b" ><span style="width: 70%;"></span>70%</div>
+                </div>
+            </div>
+            <div class="card">
+                <span><i class="fa-brands fa-github"></i></span>
+                <div class="card-color">
+                    <h3>Git & GitHub</h3>
+                    <div class="progress c"><span  style="width: 60%;"></span>60%</div>
+                </div>
+            </div>
+            <div class="card">
+                <span><i class='bx bxs-comment-detail' ></i></span>
+                <div class="card-color">
+                    <h3>React (Upcoming)</h3> 
+                    <div class="progress d" ><span style="width: 20%;"></span>20%</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="skills" class="skill">
+        <div class="bg-shape shape1"></div>
+        <div class="bg-shape shape2"></div>
+        <div class="skill-spell">
+            <h2>MY EXPERTISE</h2>
+            <div class="split"><h1 >My</h1><h1 class="h1">Skills</h1></div>
+            <div class="my-line"><span class="line" style="width: 80%;"></span></div>
+            <p>Technologies I Use to build modern and reponsive websites</p>
+        </div>
+        <div class="skilles">
+        <div class="skill-card">
+            <div class="og-card a">
+                <span><i class='bx bxl-html5'></i></span>
+                <h2>HTML5</h2>
+                <p>Markup Languages for structuring the web.</p>
+                <div class="og" style="width: 100%;"></div>
+            </div>
+             <div class="og-card b">
+                <span><i class='bx bxl-css3' ></i></span>
+                <h2>CSS3</h2>
+                <p>Styling Languages for beautiful designs.</p>
+                <div class="og" style="width: 100%;"></div>
+            </div>
+             <div class="og-card c">
+                <span><i class='bx bx-devices'></i></span>
+                <h2>Responsive Design</h2>
+                <p>Creating websites that work on all devices.</p>
+                <div class="og" style="width: 100%;"></div>
+            </div>
+             <div class="og-card d">
+                <span><i class='bx bx-calculator'></i></span>
+                <h2>Flexbox</h2>
+                <p>Building Flexible layouts with ease.</p>
+                <div class="og" style="width: 100%;"></div>
+            </div>
+             <div class="og-card e">
+                <span><i class='bx bx-border-all' ></i></span>
+                <h2>CSS Grid</h2>
+                <p>Powerful 2D layout system for the web.</p>
+                <div class="og" style="width: 100%;"></div>
+            </div>
+             <div class="og-card f">
+                <span><i class='bx bxl-github' ></i></span>
+                <h2>Git & GitHub</h2>
+                <p>Version control and collaboration tools.</p>
+                <div class="og" style="width: 100%;"></div>
+            </div>
+             <div class="og-card g">
+                <span><i class='bx bxl-javascript' ></i></span>
+                <h2>JavaScript<br>(Learning)</h2>
+                <p>Currently learning JavaScript.</p>
+                <div class="og" style="width: 100%;"></div>
+            </div>
+        </div>
+         <div aria-hidden class="skill-card">
+            <div class="og-card a">
+                <span><i class='bx bxl-html5'></i></span>
+                <h2>HTML5</h2>
+                <p>Markup Languages for structuring the web.</p>
+                <div class="og" style="width: 100%;"></div>
+            </div>
+             <div class="og-card b">
+                <span><i class='bx bxl-css3' ></i></span>
+                <h2>CSS3</h2>
+                <p>Styling Languages for beautiful designs.</p>
+                <div class="og" style="width: 100%;"></div>
+            </div>
+             <div class="og-card c">
+                <span><i class='bx bx-devices'></i></span>
+                <h2>Responsive Design</h2>
+                <p>Creating websites that work on all devices.</p>
+                <div class="og" style="width: 100%;"></div>
+            </div>
+             <div class="og-card d">
+                <span><i class='bx bx-calculator'></i></span>
+                <h2>Flexbox</h2>
+                <p>Building Flexible layouts with ease.</p>
+                <div class="og" style="width: 100%;"></div>
+            </div>
+             <div class="og-card e">
+                <span><i class='bx bx-border-all' ></i></span>
+                <h2>CSS Grid</h2>
+                <p>Powerful 2D layout system for the web.</p>
+                <div class="og" style="width: 100%;"></div>
+            </div>
+             <div class="og-card f">
+                <span><i class='bx bxl-github' ></i></span>
+                <h2>Git & GitHub</h2>
+                <p>Version control and collaboration tools.</p>
+                <div class="og" style="width: 100%;"></div>
+            </div>
+             <div class="og-card g">
+                <span><i class='bx bxl-javascript' ></i></span>
+                <h2>JavaScript<br>(Learning)<br></h2>
+                <p>Currently learning JavaScript.</p>
+                <div class="og" style="width: 100%;"></div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section id="project" class="project-card">
+        <div class="pro-card">
+            <div class="pro-logo">
+                <span><i class='bx bxs-briefcase-alt-2'></i></span>
+                <h2>My Projects</h2>
+            </div>
+            <div class="pro-view">
+                <h3>View All Projects</h3>
+                <h4>→</h4>
+            </div>
+        </div>
+            <div class="pro-info">
+                <div class="pro-grid">
+                    <div class="pro-img">
+                        <img src="https://img.magnific.com/free-vector/user-panel-template-infographic-dashboard_23-2148378206.jpg?semt=ais_hybrid&w=740&q=80">
+                    </div>
+                    <h3>Dashboard UI</h3>
+                    <p>A responsive dashboard UI design using HTML & CSS</p>
+                    <div class="pro-button">
+                        <input type="text" placeholder="HTML">
+                        <input type="text" placeholder="Css">
+                    </div>
+                </div>
+                     <div class="pro-grid">
+                    <div class="pro-img">
+                        <img src="https://i.ytimg.com/vi/S9NOXjdipl4/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLB5kbDLrc6hzcf_27aVON0CBkEdRg">
+                    </div>
+                    <h3>Personal Portal</h3>
+                    <p>A personal Portfolio website build using HTML & CSS</p>
+                    <div class="pro-button">
+                        <input type="text" placeholder="HTML">
+                        <input type="text" placeholder="Css">
+                    </div>
+                     </div>
+                     <div class="pro-grid">
+                    <div class="pro-img">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBzEuBabqMGQhA3YEEt8hZPUzgYkoA2aSf8g&s">
+                    </div>
+                    <h3>Responsive Landing Page</h3>
+                    <p>A modern responsive landing page for practices</p>
+                    <div class="pro-button">
+                        <input type="text" placeholder="HTML">
+                        <input type="text" placeholder="Css">
+                    </div>
+                     </div>
+            </div>
+    </section>
+    <footer id="contact">
+        <div class="left">
+            <h2>Let's Connect</h2>
+            <p>I'm always open to learning,collaboration and building new projects.</p>
+             <div class="text-icons a">
+                    <span class="f"><i class="fa-brands fa-linkedin-in"></i></span>
+                    <span class="g"><i class="fa-brands fa-github"></i></span>
+                    <span class="h"><i class="fa-brands fa-instagram"></i></span>
+                    <span class="j"><i class="fa-solid fa-envelope"></i></span>
+                </div>
+        </div>
+
+        <div class="middle">
+            <h2>Quick Links</h2>
+            <div class="middle-text">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Skills</a>
+                <a href="#">Project</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+
+        <div class="right">
+            <h2>@ 2026 Your Name</h2>
+            <p>Made with ❤️ and dedication</p>
+        </div>
+    </footer>
+</body>
+</html>>
