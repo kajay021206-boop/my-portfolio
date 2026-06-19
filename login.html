@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login page</title>
+     <link rel="preconnect" href="https://fonts.googleapis.com">`
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+   <style>
+    *{
+        padding: 0;
+        margin: 0;
+        font-family: cursive;
+        box-sizing: border-box;
+    }
+    body{
+        background-image: url(https://cdn.prod.website-files.com/62d84e447b4f9e7263d31e94/637cacd6ffc951efa09563f4_benjamin-voros-phIFdC6lA4E-unsplash-scaled.jpeg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .login-page{
+     width: 380px;
+     height: 430px;
+     border-radius: 10px;
+     position: relative;
+     overflow: hidden;
+    }
+    .login-page::before{
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50px;
+        width: 380px;
+        height: 420px;
+        background: linear-gradient(0deg,transparent,transparent,#fff,#fff,#fff);
+        z-index: 1;
+        transform-origin: bottom right;
+        animation: animate 6s linear infinite ;
+    }
+    .login-page::after{
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50px;
+        width: 350px;
+        height: 370px;
+        background: linear-gradient(0deg,transparent,transparent,#fff,#fff,#fff);
+        z-index: 1;
+        transform-origin: bottom right;
+        animation: animate 6s linear infinite ;
+        animation-delay: -3s;
+    }
+     .border{
+            position: absolute;
+            top: 0;
+            inset: 0;
+        }
+        .border::before{
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50px;
+             width: 380px;
+            height: 420px;
+            background: linear-gradient(0deg,transparent,transparent,#fff,#fff,#fff);
+            z-index: 1;
+            transform-origin: bottom right;
+            animation: animate 6s linear infinite ;  
+            animation-delay: -1.5s;
+        }
+         .border::after{
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50px;
+             width: 380px;
+            height: 420px;
+            background: linear-gradient(0deg,transparent,transparent,#fff,#fff,#fff);
+            z-index: 1;
+            transform-origin: bottom right;
+            animation: animate 6s linear infinite ;  
+            animation-delay: -4.5s;
+        }
+     @keyframes animate{
+            0%{
+                transform: rotate(0deg);
+            }
+             100%{
+                transform: rotate(360deg);
+            }
+        }
+  .login-page form{
+    display: flex;
+     justify-content: center;
+    flex-direction: column;
+    inset: 5px;
+    border-radius: 10px;
+    position: absolute;
+    background: #021931;
+    padding: 50px 40px;
+    gap: 20px;
+    z-index: 2;
+  }
+  .login-page h1{
+    text-align: center;
+    font-size: 60px;
+    margin-bottom: 10px;
+    color: #fff;
+  }
+  .login-text{
+  display: flex;
+  position: relative;
+  width: 280px;
+  margin-top: 15px;
+
+  }
+  .login-text input{
+  position: relative;
+  width: 100%;
+  padding: 20px 10px 10px;
+  border: none;
+  background: transparent;
+  outline: none;
+  transition: 0.5s;
+  z-index: 1;
+  }
+  .login-text span{
+    position: absolute;
+    left: 0;
+    font-size: 20px;
+    margin-left: -10px;
+    margin-top: -10px;
+    pointer-events: none;
+    color: #fff;
+    padding: 20px 10px 10px;
+    transition: 0.5s;
+  }
+  .login-text input:valid~span,
+  .login-text input:focus~span{
+    transform: translateY(-35px);
+    font-size: 18px;
+  }
+  .login-text i{
+    position: absolute;
+    height: 2px;
+    bottom: 0;
+    width: 100%;
+    background: #fff;
+    transition: 0.5s;
+  }
+   .login-text input:valid~i,
+  .login-text input:focus~i{
+    height: 45px;
+    border-radius: 10px 10px 0 0;
+    background: cyan;
+  }
+  .forget{
+    display: flex;
+    justify-content: space-between;
+  }
+  .forget a{
+    text-decoration: none;
+    color: cyan;
+    transition: 0.5s;
+  }
+  .forget a:hover{
+    text-decoration: underline;
+  }
+  .login-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .login-button button{
+    padding: 20px 10px 10px;
+    width: 100%;
+    border-radius: 10px;
+    font-size: 20px;
+    transition: 0.5s;
+  }
+  .login-button button:hover{
+  background: linear-gradient(50deg,#021931,#122d49,#021931,#1e3a58,#051c35,#011122);
+  border: 2px solid #fff;
+  color: cyan;
+  }
+   </style>
+</head>
+<body>
+    <div class="login-page">
+        <span class="border"></span>
+        <form>
+            <h1>Login</h1>
+            <div class="login-text">
+                <input type="email" required>
+                <span>UserName</span>
+                <i></i>
+            </div>
+              <div class="login-text">
+                <input type="password" required>
+                <span>Password</span>
+                <i></i>
+            </div>
+            <div class="forget">
+                <a href="#">Forget-password</a>
+                <a href="#">Sign-up</a>
+            </div>
+            <div class="login-button">
+                <button>Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
