@@ -18,7 +18,7 @@
             scroll-behavior: smooth;
         }
         body{
-            background: #fff;
+            
         }
         .navigation{
               background:linear-gradient(190deg,#000000,#050506,#11144b,#060613,#0f1026);
@@ -619,6 +619,41 @@
        transform: translateY(-10px);
        box-shadow: 0 4px 22px   rgb(225, 255, 0);
        }
+       .dark button{
+        width: 50px;
+        height: 50px;
+        border-radius: 10px;
+        font-size: 20px;
+       }
+    body.dark{
+        background-color: black;
+        color: #fff;
+       }
+  body.dark .homes{
+    background: #000000;
+    color: #fff;
+  }   
+body.dark .navigation{
+    background:black;
+}
+body.dark .skill{
+    background: #000000;
+    color: #fff;
+}
+body.dark .project-card{
+    background:#000000;
+    color:white;
+}
+
+body.dark footer{
+    background:#000000;
+    color:white;
+}
+
+body.dark .me{
+    background:#000000;
+    color:white;
+}
     </style>
 
 </head>
@@ -633,6 +668,7 @@
                <a href="#project" class="nav-item" >Projects</a>
                 <a href="#contact" class="nav-item" >Contact</a>
         </nav>
+        <div class="dark"><button onclick="darkmode()">🌙</button></div>
         <div class="nav-button"><i class='bx bx-download' ></i> Download CV</div>
     </div>
     <section id="home" class="homes">
@@ -917,7 +953,9 @@
         </div>
     </footer>
     <script>
-
+       function darkmode() {
+        document.body.classList.toggle("dark")
+       }
     </script>
 </body>
 </html>
