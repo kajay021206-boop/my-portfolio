@@ -18,7 +18,7 @@
             scroll-behavior: smooth;
         }
         body{
-            
+          background: #fff;  
         }
         .navigation{
               background:linear-gradient(190deg,#000000,#050506,#11144b,#060613,#0f1026);
@@ -654,6 +654,15 @@ body.dark .me{
     background:#000000;
     color:white;
 }
+#clock{
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 590px;
+    margin-top: -30px;
+    background: linear-gradient(45deg,cyan,rgb(255, 0, 255));
+    -webkit-background-clip: text;
+    color: transparent;
+}
     </style>
 
 </head>
@@ -667,6 +676,7 @@ body.dark .me{
               <a href="#skills" class="nav-item" >Skills</a>
                <a href="#project" class="nav-item" >Projects</a>
                 <a href="#contact" class="nav-item" >Contact</a>
+                <div id="clock"></div>
         </nav>
         <div class="dark"><button onclick="darkmode()">🌙</button></div>
         <div class="nav-button"><i class='bx bx-download' ></i> Download CV</div>
@@ -954,8 +964,17 @@ body.dark .me{
     </footer>
     <script>
        function darkmode() {
-        document.body.classList.toggle("dark")
+        document.body.classList.toggle("dark");
        }
+       function showtime(){
+        let time=new Date();
+        let hours=time.getHours();
+        let minutes=time.getMinutes();
+        let seconds=time.getSeconds();
+        document.getElementById("clock").innerHTML=hours+":"+minutes+":"+seconds;
+       }
+       showtime();
+       setInterval(showtime,1000);
     </script>
 </body>
 </html>
