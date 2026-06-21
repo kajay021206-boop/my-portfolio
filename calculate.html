@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calcbuttonater</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: cursive;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #242426;
+        }
+        .calculater{
+            display: flex;
+            width: 430px;
+            height: 600px;
+            background:linear-gradient(55deg,black,rgb(24, 15, 12),rgb(13, 10, 5),black);
+            border-radius: 10px;
+            box-shadow: 0px 0px 62px 12px rgb(166, 54, 13);
+            color: aliceblue;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            border: 3px solid orangered;
+        }
+        .display{
+    position: absolute;
+    width: 400px;
+    height: 130px;
+    top: 20px;
+    border-radius: 10px;
+    border: 2px solid white;
+    background: #2c2c2c;
+    color: white;
+    font-size: 40px;
+    text-align: right;
+    padding-right: 20px;
+    outline: none;
+}
+        .num{
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            margin-top: 130px;     
+        }
+        .num-sub{
+            display: flex;
+            justify-content: space-between;
+            width: 390px;
+            margin-top: 10px;
+            height: 100%;
+            align-items: center;
+        }
+        .num-sub button{
+            font-size: 30px;
+            background: rgb(42, 34, 18);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 3px solid #fff;
+            color: orangered;
+            transition: 0.5s;
+        }
+        .num-sub button:hover{
+            background: orangered;
+            color: black;
+            transform: scale(1.1);
+        }
+        .num-sub.a button{
+            background: orangered;
+            color: black;
+        }
+        .num-sub .c{
+            background: orangered;
+            color: black;
+        }
+        .num-sub.a button:hover,.num-sub .c:hover{
+            background: black;
+            color: orangered;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculater">
+        <input type="text" class="display" id="display" readonly>
+        <div class="num">
+            <div class="num-sub a">
+                <button onclick="cleardisplay()">AC</button>
+                <button onclick="addvalue('(')">(</button>
+                <button onclick="addvalue(')')">)</button>
+                <button class="c" onclick="cancel()">⌫</button>
+            </div>
+             <div class="num-sub">
+                <button onclick="addvalue('+')">+</button>
+                <button onclick="addvalue('-')">-</button>
+                <button onclick="addvalue('%')">%</button>
+                <button class="c" onclick="addvalue('/')">/</button>
+            </div>
+             <div class="num-sub">
+                <button onclick="addvalue('7')">7</button>
+                <button onclick="addvalue('8')">8</button>
+                <button onclick="addvalue('9')">9</button>
+                <button class="c" onclick="addvalue('*')">⨉</button>
+            </div>
+             <div class="num-sub">
+                <button onclick="addvalue('4')">4</button>
+                <button onclick="addvalue('5')">5</button>
+                <button onclick="addvalue('6')">6</button>
+                <button class="c" onclick="addvalue('-')">-</button>
+            </div>
+             <div class="num-sub">
+                <button onclick="addvalue('1')">1</button>
+                <button onclick="addvalue('2')">2</button>
+                <button onclick="addvalue('3')">3</button>
+                <button class="c" onclick="addvalue('^')">^</button>
+            </div>
+             <div class="num-sub">
+                <button onclick="addvalue('00')">00</button>
+                <button onclick="addvalue('0')">0</button>
+                <button onclick="addvalue('.')">.</button>
+                <button class="c" onclick="calculate()">=</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        let display=document.getElementById("display");
+        function addvalue(value){
+            display.value+=value;
+        }
+        function cleardisplay(){
+            display.value="";
+        }
+        function calculate(){
+            display.value=eval(display.value);
+        }
+        function cancel(){
+          display.value=display.value.slice(0,-1);
+        }
+    </script>
+</body>
+</html>
