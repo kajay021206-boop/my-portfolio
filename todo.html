@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: cursive;
+        }
+        body{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          min-height: 100vh;
+          background: #292828; 
+        }
+        .todo{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+        .image{
+         position:relative;
+         z-index: -2;  
+         width:100%;
+         height: 300px;
+         display: flex;
+         margin-top: -170px;
+        }
+        .image img{
+            width: 1520px;
+            height: 300px;
+            object-fit: cover;
+        }
+        .todo-text{
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            width: 450px;
+            height: 550px;
+            z-index: 0;
+            margin-top: -120px;
+            background: rgb(7, 7, 23);
+            border: 2px solid #fff;
+            border-radius: 10px;
+            box-shadow: 0 20px 99px #626060;
+            color: #fff;
+        }
+        .logo h1{
+            font-size: 50px;
+            color: #fff;
+            position: absolute;
+            z-index: 2; 
+            margin-top: -200px;
+            margin-left: -220px;
+        }
+        .search{
+        display: flex;
+        margin-bottom: 30px;
+        background-color: #292828;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+        border: 2px solid #adacac;
+        border-radius: 10px;
+        position: relative;
+        }
+        .search input{
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            border-radius: 10px;
+            color: #fff;
+            border: none;
+            padding: 10px;
+        }
+        .ticks{
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .text-tick{
+            display: flex;
+            gap: 10px;
+            border: 2px solid #737070;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .text-tick button{
+            display: flex;
+            position: absolute;
+            right: 10px;
+            font-size: 20px;
+            color: red;
+            background: transparent;
+            border: none;
+        }
+        #add{
+            position: absolute;
+            right: 10px; 
+        }
+        #add:hover{
+    background: blueviolet;
+    transform: scale(1.1);
+    transition: .3s;
+    color: aliceblue;
+}
+    </style>
+</head>
+<body>
+    <div class="todo">
+        <div class="image">
+            <img src="https://c4.wallpaperflare.com/wallpaper/362/276/920/nature-4k-pc-full-hd-wallpaper-preview.jpg" /cover>
+        </div>
+        <div class="logo"><h1>TODO</h1></div>
+        <div class="todo-text">
+            <div class="search">
+                <input type="text" placeholder="Create a new todo.....">
+                <button id="add">➕</button>
+            </div>
+            <div class="ticks">
+                <div class="text-tick">
+                    <input type="checkbox">
+                    <p>Schedule a dentist application.</p>
+                    <button>🔴</button>
+                </div>
+                 <div class="text-tick">
+                    <input type="checkbox">
+                    <p>Complete one online course module.</p>
+                    <button>🔴</button>
+                </div>
+                 <div class="text-tick">
+                    <input type="checkbox">
+                    <p>Plan a weekend outing.</p>
+                    <button>🔴</button>
+                </div>
+                 <div class="text-tick">
+                    <input type="checkbox">
+                    <p>Play utility bills.</p>
+                    <button>🔴</button>
+                </div>
+                 <div class="text-tick">
+                    <input type="checkbox">
+                    <p>Review and edit project documentation.</p>
+                    <button>🔴</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
