@@ -51,6 +51,7 @@
             border-radius: 10px;
             box-shadow: 0 20px 99px #626060;
             color: #fff;
+            overflow-y: auto;
         }
         .logo h1{
             font-size: 50px;
@@ -92,12 +93,13 @@
             border: 2px solid #737070;
             padding: 10px;
             border-radius: 10px;
+            position: relative;
         }
         .text-tick button{
             display: flex;
-            position: absolute;
             right: 10px;
             font-size: 20px;
+            position: absolute;
             color: red;
             background: transparent;
             border: none;
@@ -107,7 +109,7 @@
             right: 10px; 
         }
         #add:hover{
-    background: blueviolet;
+    background: rgb(255, 81, 0);
     transform: scale(1.1);
     transition: .3s;
     color: aliceblue;
@@ -122,37 +124,67 @@
         <div class="logo"><h1>TODO</h1></div>
         <div class="todo-text">
             <div class="search">
-                <input type="text" placeholder="Create a new todo.....">
+                <input type="text" id="taskinput" placeholder="Create a new todo.....">
                 <button id="add">➕</button>
             </div>
-            <div class="ticks">
+            <div class="ticks" id="tasklist">
                 <div class="text-tick">
                     <input type="checkbox">
                     <p>Schedule a dentist application.</p>
-                    <button>🔴</button>
+                    <button>🗑</button>
                 </div>
                  <div class="text-tick">
                     <input type="checkbox">
                     <p>Complete one online course module.</p>
-                    <button>🔴</button>
+                    <button>🗑</button>
                 </div>
                  <div class="text-tick">
                     <input type="checkbox">
                     <p>Plan a weekend outing.</p>
-                    <button>🔴</button>
+                    <button>🗑</button>
                 </div>
                  <div class="text-tick">
                     <input type="checkbox">
                     <p>Play utility bills.</p>
-                    <button>🔴</button>
+                    <button>🗑</button>
                 </div>
                  <div class="text-tick">
                     <input type="checkbox">
                     <p>Review and edit project documentation.</p>
-                    <button>🔴</button>
+                    <button>🗑</button>
                 </div>
             </div>
         </div>
     </div>
+    <script>
+     const input=document.getElementById("taskinput");
+     const button=document.getElementById("add");
+     const list=document.getElementById("tasklist")
+     button.addEventListener("click",function(){
+        let task=input.value;
+         
+        if(task===""){
+            alert("please enter a task");
+            return;
+        }
+        let taskbox=document.createElement("div");
+        taskbox.classList.add("text-tick");
+        let checkbox=document.createElement("input");
+        checkbox.type="checkbox";
+        let newtask=document.createElement("p");
+        newtask.innerText=task;
+        let deletebtn=document.createElement("button");
+        deletebtn.innerText="🗑";
+        deletebtn.addEventListener("click",function(){
+            taskbox.remove();
+        });
+         taskbox.appendChild(checkbox);
+         taskbox.appendChild(newtask);
+         taskbox.appendChild(deletebtn);
+        list.appendChild(taskbox);
+        input.value="";
+       
+     });
+    </script>
 </body>
 </html>
